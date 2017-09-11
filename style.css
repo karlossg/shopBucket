@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+body {
+  margin: 0 auto;
+  background-color: #E8CB92;
+  text-align: center;
+  font-family: 'Noto Sans','Times New Roman', Times, serif;
+}
+
+header {
+  text-transform: uppercase;
+  margin-top: 30px;
+  padding-top: 10px;
+}
+
+input {
+  width: 200px;
+  height: 20px;
+  background-color: #F1BC9B;
+  border-radius: 5px;
+}
+
+button {
+  border-width: 0px 0.2px 0.2px 0px;
+  color: #000000;	 
+  background-color: #E88143;  
+  border-radius: 5px;
+  height: 25px;
+  cursor: pointer;  
+  font-family: 'Noto Sans','Times New Roman', Times, serif;
+  font-weight: bold;
+  padding: 4px;
+  font-size: 12px;
+}
+
+footer {
+  font-size: 12px;
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  background-color: #EA8D54;
+  text-align: center;
+  width: 450px;
+
+  border-radius: 5px;
+  -webkit-box-shadow: 4px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 3px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.shoppingList {
+  text-align: left;
+  margin: 0 auto;
+  width: 250px;
+}
+
+.addProduct {
+  text-align: center;
+  margin: 0 auto;
+  width: 250px;
+}
+
+.filterProduct {
+  visibility: hidden;
+  margin-top: 10px; 
+}
+
+.printButton {
+  visibility: hidden;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.deleteButton {
+  margin-left: 5px;
+  height: 24px;
+}
+
+

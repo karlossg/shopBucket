@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple shoping bucket</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css"> </head>
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Shoping bucket</h1>
+      </header> 
+
+      <section class="addProduct hide show">
+        <input id="addProductNameInput" type="text" placeholder=" Add product to bucket">
+        <button id="add" onclick="handlers.addProduct()">OK</button>
+      </section>
+
+      <section class="filterProduct hide show">
+        <input id="filterInput" type="text" placeholder=" Filter your products">
+        <button id="filter" onclick="handlers.toggleFiltered()">OK</button>
+      </section>
+
+      <section class="shoppingList">
+          <ul></ul>
+      </section>  
+
+      <section>
+        <button class="printButton" onclick="handlers.printList()">PRINT</button>
+      </section>
+
+    </main>
+    <footer class="footer hide show">
+        <p>Created by <a href="https://github.com/karlossg" target="_blank"> Karol Grabowski</a> | 2017</p>
+    </footer>
+  <script src="script.js"></script>
+  </body>
+  </html>
