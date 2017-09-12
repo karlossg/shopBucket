@@ -68,15 +68,20 @@ footer {
 
 .filterProduct {
   visibility: hidden;
-  margin-top: 10px; 
 }
 
-
+#filterInput {
+  margin-top: 10px;
+}
 
 .printButton {
   visibility: hidden;
   margin-top: 30px;
   margin-bottom: 5px;
+}
+
+.deleteButton {
+  margin-left: 5px;
 }
 
 

@@ -52,12 +52,11 @@ var view = {
     productsul.innerHTML = '';
     
     shoppingList.products.forEach(function(product, position) {
-      if (product.filtered) {
-        var productLi = document.createElement('li');
-        productLi.textContent = product.productName;
-        productLi.appendChild(this.createDeleteButton())
-        productsul.appendChild(productLi);
-      }
+      var productLi = document.createElement('li');
+      productLi.textContent = product.productName;
+      if ()
+      productLi.appendChild(this.createDeleteButton())
+      productsul.appendChild(productLi);
     }, this);
   },
   displayFilterAndPrint: function() {
@@ -90,7 +89,7 @@ var view = {
     var showPrintButton = document.querySelector('.printButton');
     showPrintButton.style.visibility = 'visible';
     for (var i = 0; i < showElement.length; i++) {
-      showElement[i].style.display = 'block';
+      showElement[i].style.display = 'inline';
     }
   },
   setUpEventListeners: function() {
