@@ -54,7 +54,6 @@ var view = {
     shoppingList.products.forEach(function(product, position) {
       var productLi = document.createElement('li');
       productLi.textContent = product.productName;
-      if ()
       productLi.appendChild(this.createDeleteButton())
       productsul.appendChild(productLi);
     }, this);
