@@ -8,10 +8,6 @@ var shoppingList = {
   },
   deleteProduct: function(position) {
     this.products.splice(position, 1);
-  },
-  filterProduct: function(position) {
-    var product = this.products[position];
-    product.filtered = !product.filtered;
   }
 };
 
@@ -30,19 +26,17 @@ var handlers = {
     view.displayProducts();
   },
   toggleFiltered: function() {
-    var filterInput = document.getElementById('filterInput');
-    
-    shoppingList.products.forEach(function(product, position) {
-      var productName = product.productName;
-      var productId = position;
-      product.filtered = true;
-      if (productName.includes(filterInput.value) !== true) {
-        shoppingList.filterProduct(productId);        
+    var input = document.getElementById('filterInput');
+    var filter = input.value.toUpperCase();
+    var ul = document.querySelector('ul');
+    var li = ul.getElementsByTagName('li');
+    for (var i = 0; i < li.length; i++) {
+      if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = '';
+      } else {
+        li[i].style.display = 'none';
       }
-    });
-    view.displayProducts();
-    filterInput.value = '';
-    document.getElementById("filterInput").focus();  
+    }
   },
   printList: function() {
     view.printListHide();
@@ -58,8 +52,7 @@ var view = {
     productsul.innerHTML = '';
     
     shoppingList.products.forEach(function(product, position) {
-      
-      if (product.filtered === true) {
+      if (product.filtered) {
         var productLi = document.createElement('li');
         productLi.textContent = product.productName;
         productLi.appendChild(this.createDeleteButton())
@@ -70,7 +63,7 @@ var view = {
   displayFilterAndPrint: function() {
     var elementFilter = document.querySelector('.filterProduct');
     var elementPrint = document.querySelector('.printButton');
-    if (shoppingList.products.length > 0) {
+    if (shoppingList.products.length) {
       elementFilter.style.visibility = 'visible';
       elementPrint.style.visibility = 'visible';
     } else {
@@ -110,17 +103,13 @@ var view = {
     });
     document.getElementById("filterInput")
     .addEventListener("keyup", function (event) {
-      event.preventDefault();
-      if (event.keyCode == 13) {
-        document.getElementById("filter").click();
-      }
+      handlers.toggleFiltered();
     });
     document.querySelector('ul').addEventListener('click', function(event) {
       var elementClicked = event.target;
-    
-          if (elementClicked.className === 'deleteButton hide show') {
-            handlers.deleteProduct(parseInt(elementClicked.parentNode.id));
-          }
+        if (elementClicked.className === 'deleteButton hide show') {
+          handlers.deleteProduct(parseInt(elementClicked.parentNode.id));
+        }
     });  
   }
 };

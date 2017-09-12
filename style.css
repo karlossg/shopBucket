@@ -20,6 +20,10 @@ input {
   border-radius: 5px;
 }
 
+#filterInput {
+  width: 230px;
+}
+
 button {
   border-width: 0px 0.2px 0.2px 0px;
   color: #000000;	 
@@ -67,15 +71,14 @@ footer {
   margin-top: 10px; 
 }
 
+
+
 .printButton {
   visibility: hidden;
   margin-top: 30px;
   margin-bottom: 5px;
 }
 
-.deleteButton {
-  margin-left: 5px;
-  height: 24px;
-}
+
 
 
